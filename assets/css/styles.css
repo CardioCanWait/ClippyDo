@@ -661,3 +661,63 @@ main {
   }
 }
 
+.screenshot-sequence {
+  display: grid;
+  gap: 28px;
+}
+
+.screenshot-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 22px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.screenshot-step:nth-child(even) {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.screenshot-step:nth-child(even) .screenshot-box {
+  order: 2;
+}
+
+.screenshot-box {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.screenshot-box img {
+  border-radius: 14px;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.screenshot-copy h3 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+
+.screenshot-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .screenshot-step,
+  .screenshot-step:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .screenshot-step:nth-child(even) .screenshot-box {
+    order: 0;
+  }
+}

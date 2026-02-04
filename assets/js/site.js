@@ -1,7 +1,9 @@
 const revealTargets = Array.from(document.querySelectorAll('[data-reveal]'));
 
 revealTargets.forEach((target, index) => {
-  const delay = Math.min(index * 60, 360);
+  const baseDelay = 140 + index * 110;
+  const extraDelay = target.classList.contains('screenshot-step') ? 260 : 0;
+  const delay = Math.min(baseDelay + extraDelay, 1100);
   target.style.setProperty('--reveal-delay', `${delay}ms`);
 });
 
