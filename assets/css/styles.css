@@ -26,10 +26,12 @@ body {
   font-family: "Sora", system-ui, sans-serif;
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(245, 247, 255, 0.95) 0%, rgba(242, 245, 251, 1) 60%, rgba(238, 242, 252, 1) 100%),
+    radial-gradient(circle at 12% 15%, rgba(61, 121, 255, 0.22), rgba(61, 121, 255, 0) 45%),
+    radial-gradient(circle at 90% 8%, rgba(255, 196, 153, 0.28), rgba(255, 196, 153, 0) 42%),
+    linear-gradient(180deg, rgba(245, 247, 255, 0.96) 0%, rgba(242, 245, 251, 1) 55%, rgba(236, 241, 252, 1) 100%),
     linear-gradient(90deg, rgba(23, 64, 160, 0.04) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 64, 160, 0.04) 1px, transparent 1px);
-  background-size: auto, 48px 48px, 48px 48px;
+  background-size: auto, auto, auto, 48px 48px, 48px 48px;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -429,10 +431,15 @@ main {
   background: var(--surface);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
+  padding: 12px;
   overflow: hidden;
   cursor: zoom-in;
   box-shadow: var(--shadow-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shot img {
+  border-radius: 14px;
 }
 
 .shot:hover {
@@ -441,7 +448,7 @@ main {
 }
 
 .shot figcaption {
-  padding: 16px 18px 20px;
+  padding: 14px 4px 4px;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -551,46 +558,6 @@ main {
   transform: translateY(0);
 }
 
-@media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-
-  .header {
-    flex-wrap: wrap;
-  }
-
-  .media-stack {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .header {
-    position: static;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .screenshot-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .button {
-    transition: none;
-  }
-}
-
 .privacy-page {
   max-width: 900px;
   margin: 0 auto;
@@ -635,4 +602,44 @@ main {
   border-radius: 999px;
   font-weight: 600;
   margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .media-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    position: static;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .button {
+    transition: none;
+  }
 }
