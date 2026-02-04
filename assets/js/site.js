@@ -1,4 +1,9 @@
-const revealTargets = document.querySelectorAll('[data-reveal]');
+const revealTargets = Array.from(document.querySelectorAll('[data-reveal]'));
+
+revealTargets.forEach((target, index) => {
+  const delay = Math.min(index * 60, 360);
+  target.style.setProperty('--reveal-delay', `${delay}ms`);
+});
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
