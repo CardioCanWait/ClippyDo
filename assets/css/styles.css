@@ -237,10 +237,12 @@ main {
   padding: 14px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  transform: rotate(-1.2deg) scale(1.04);
 }
 
 .media-card img {
   border-radius: calc(var(--radius-lg) - 10px);
+  cursor: zoom-in;
 }
 
 .media-caption {
@@ -698,6 +700,18 @@ main {
   border-radius: 14px;
   width: 100%;
   cursor: zoom-in;
+}
+
+.media-card {
+  transform: rotate(-1.2deg);
+}
+
+.screenshot-step:nth-child(odd) .screenshot-box {
+  transform: rotate(-1deg);
+}
+
+.screenshot-step:nth-child(even) .screenshot-box {
+  transform: rotate(1deg);
 }
 
 .screenshot-copy h3 {
